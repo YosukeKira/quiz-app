@@ -29,7 +29,7 @@ public class QuizAppApplication {
 //		showOne(); // 1件取得
 //		updateQuiz(); // 更新処理
 //		deleteQuiz(); // 削除処理
-		doQuiz(); // クイズを実行する
+//		doQuiz(); // クイズを実行する
 	}
 	
 	/** 全件取得 */
