@@ -2,21 +2,21 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>「〇×クイズ」アプリ：PLAY</title>
+<title th:text="#{play.title.main}"></title>
 </head>
 <body>
-	<h1>「〇×クイズ」アプリ：PLAY</h1>
+	<h1 th:text="#{play.title.main}"></h1>
 	<h3>クイズ</h3>
 	<th:block th;if="${msg}">
 		<p th:text="${msg}" style="color:red"></p>
-		<a th:href="@{/quiz/}">CRUD画面へ</a>
+		<a th:href="@{/quiz}" th:text="#{play.page.back}"></a>
 	</th:block>
 	<th:block th;unless="${msg}">
-		<p th:text="${quizForm.question}">クイズ内容</p>
+		<p th:text="${quizForm.question}"></p>
 		<form th:action="@{/quiz/check}" th:object="${quizForm}" method="post">
 			<input type="hidden" th:field="*{id}" />
-			<button name="answer" value="true">○</button>
-			<button name="answer" value="false">×</button>
+			<button name="answer" value="true" th:text="#{play.button.true}"></button>
+			<button name="answer" value="false" th:text="#{play.button.false}"></button>
 		</form>
 	</th:block>
 </body>
